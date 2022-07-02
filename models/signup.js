@@ -3,7 +3,7 @@ module.exports = (db,type)=>{
         id:{
             type: type.INTEGER,
             autoIncrement:true,
-            primarykey:true
+            primaryKey: true
         },
         username:{
             type:type.STRING,

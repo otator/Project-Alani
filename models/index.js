@@ -1,4 +1,4 @@
-const sequelize = require('sequelize')
+const Sequelize = require('sequelize')
 const db = require('../config/database')
 const loginmodel = require('./login')
 const signupmodel = require('./signup')
