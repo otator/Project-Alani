@@ -1,8 +1,9 @@
-const express = require('express')
+const express = require("express")
 const bodyParser = require('body-parser')
 const db = require('./config/database')
 const loginrouter = require('./routes/login')
 const signuprouter = require('./routes/signup')
+const {login,signup} = require ('./models/index')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -17,6 +18,8 @@ app.get('/',(req,res)=>{
 app.use('/M1',loginrouter)
 app.use('/M1',signuprouter)
 
+login.sync()
+signup.sync()
 db
  .authenticate()
  .then(()=> {
